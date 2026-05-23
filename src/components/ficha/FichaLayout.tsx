@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { BaseSecao } from "./BaseSecao";
 import { ResumoSecao } from "./ResumoSecao";
 import { VerbaPlaceholder } from "./VerbaPlaceholder";
+import { HorasExtrasSecao } from "./HorasExtrasSecao";
 
 type SecaoId = "BASE" | "RESUMO" | string;
 
