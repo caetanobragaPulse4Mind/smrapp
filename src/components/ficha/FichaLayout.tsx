@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useProcesso } from "@/state/ProcessoContext";
-import { VERBAS_DEFERIDAS_CHIPS, VERBA_LABEL, STATUS_PROCESSO } from "@/lib/constants";
+import { VERBA_LABEL, STATUS_PROCESSO } from "@/lib/constants";
 import { Check, Circle, ChevronLeft } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { StatusBadge } from "@/components/StatusBadge";
@@ -10,6 +10,7 @@ import { BaseSecao } from "./BaseSecao";
 import { ResumoSecao } from "./ResumoSecao";
 import { VerbaPlaceholder } from "./VerbaPlaceholder";
 import { HorasExtrasSecao } from "./HorasExtrasSecao";
+import { HorasIntervalaresSecao } from "./HorasIntervalaresSecao";
 import { JornadaArbitradaSecao, JornadaMistaSecao } from "./JornadaSecoes";
 
 type SecaoId = "BASE" | "RESUMO" | string;
