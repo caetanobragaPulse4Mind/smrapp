@@ -10,6 +10,7 @@ import { BaseSecao } from "./BaseSecao";
 import { ResumoSecao } from "./ResumoSecao";
 import { VerbaPlaceholder } from "./VerbaPlaceholder";
 import { HorasExtrasSecao } from "./HorasExtrasSecao";
+import { JornadaArbitradaSecao, JornadaMistaSecao } from "./JornadaSecoes";
 
 type SecaoId = "BASE" | "RESUMO" | string;
 
@@ -124,10 +125,24 @@ export function FichaLayout() {
               if (secao === "horas_extras") {
                 return (
                   <HorasExtrasSecao
-                    onPrev={goPrev}
-                    onNext={goNext}
-                    prevLabel={prev?.label}
-                    nextLabel={next?.label}
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "jornada_arbitrada") {
+                return (
+                  <JornadaArbitradaSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "jornada_mista") {
+                return (
+                  <JornadaMistaSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
                   />
                 );
               }
