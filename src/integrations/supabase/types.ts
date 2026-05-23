@@ -14,7 +14,599 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      adicionais_condicionais: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "adicionais_condicionais_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      adicional_noturno: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "adicional_noturno_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      audit_log: {
+        Row: {
+          acao: string
+          id: string
+          processo_id: string
+          secao: string | null
+          timestamp: string
+          usuario: string | null
+        }
+        Insert: {
+          acao: string
+          id?: string
+          processo_id: string
+          secao?: string | null
+          timestamp?: string
+          usuario?: string | null
+        }
+        Update: {
+          acao?: string
+          id?: string
+          processo_id?: string
+          secao?: string | null
+          timestamp?: string
+          usuario?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "audit_log_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: false
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      base: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "base_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      danos: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "danos_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      deducoes: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deducoes_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      devolucao_descontos: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "devolucao_descontos_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      dif_salariais: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "dif_salariais_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      honorarios: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "honorarios_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      horas_extras: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "horas_extras_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      horas_intervalares: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "horas_intervalares_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      jornada_arbitrada: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "jornada_arbitrada_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      jornada_mista: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "jornada_mista_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      multa_convencional: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "multa_convencional_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      pensao_vitalicia: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "pensao_vitalicia_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      plr: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "plr_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      processos: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          id: string
+          numero: string | null
+          reclamada: string | null
+          reclamante: string | null
+          responsavel: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          numero?: string | null
+          reclamada?: string | null
+          reclamante?: string | null
+          responsavel?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          id?: string
+          numero?: string | null
+          reclamada?: string | null
+          reclamante?: string | null
+          responsavel?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      reintegracao: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "reintegracao_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      vales: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "vales_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      verbas_rescisorias: {
+        Row: {
+          dados: Json
+          id: string
+          processo_id: string
+          updated_at: string
+        }
+        Insert: {
+          dados?: Json
+          id?: string
+          processo_id: string
+          updated_at?: string
+        }
+        Update: {
+          dados?: Json
+          id?: string
+          processo_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "verbas_rescisorias_processo_id_fkey"
+            columns: ["processo_id"]
+            isOneToOne: true
+            referencedRelation: "processos"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
