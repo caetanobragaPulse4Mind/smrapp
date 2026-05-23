@@ -131,6 +131,14 @@ export function FichaLayout() {
                   />
                 );
               }
+              if (secao === "horas_intervalares") {
+                return (
+                  <HorasIntervalaresSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
               if (secao === "jornada_arbitrada") {
                 return (
                   <JornadaArbitradaSecao
