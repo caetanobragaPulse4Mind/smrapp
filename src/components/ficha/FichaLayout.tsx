@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { BaseSecao } from "./BaseSecao";
 import { ResumoSecao } from "./ResumoSecao";
 import { VerbaPlaceholder } from "./VerbaPlaceholder";
+import { HorasExtrasSecao } from "./HorasExtrasSecao";
 
 type SecaoId = "BASE" | "RESUMO" | string;
 
@@ -106,11 +107,32 @@ export function FichaLayout() {
         {/* Conteúdo */}
         <main className="flex-1 overflow-x-hidden">
           <div className="mx-auto max-w-4xl px-8 py-6">
-            {secao === "BASE" && <BaseSecao />}
-            {secao === "RESUMO" && <ResumoSecao />}
-            {secao !== "BASE" && secao !== "RESUMO" && (
-              <VerbaPlaceholder verbaId={secao} label={VERBA_LABEL[secao] ?? secao} />
-            )}
+            {(() => {
+              const ordem: { id: string; label: string }[] = [
+                { id: "BASE", label: "BASE" },
+                ...verbasNav,
+                { id: "RESUMO", label: "Resumo" },
+              ];
+              const idx = ordem.findIndex((o) => o.id === secao);
+              const prev = idx > 0 ? ordem[idx - 1] : undefined;
+              const next = idx >= 0 && idx < ordem.length - 1 ? ordem[idx + 1] : undefined;
+              const goPrev = prev ? () => setSecao(prev.id) : undefined;
+              const goNext = next ? () => setSecao(next.id) : undefined;
+
+              if (secao === "BASE") return <BaseSecao />;
+              if (secao === "RESUMO") return <ResumoSecao />;
+              if (secao === "horas_extras") {
+                return (
+                  <HorasExtrasSecao
+                    onPrev={goPrev}
+                    onNext={goNext}
+                    prevLabel={prev?.label}
+                    nextLabel={next?.label}
+                  />
+                );
+              }
+              return <VerbaPlaceholder verbaId={secao} label={VERBA_LABEL[secao] ?? secao} />;
+            })()}
           </div>
         </main>
       </div>
