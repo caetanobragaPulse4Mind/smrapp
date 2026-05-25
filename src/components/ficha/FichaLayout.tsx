@@ -140,6 +140,14 @@ export function FichaLayout() {
                   />
                 );
               }
+              if (secao === "adicional_noturno") {
+                return (
+                  <AdicionalNoturnoSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
               if (secao === "jornada_arbitrada") {
                 return (
                   <JornadaArbitradaSecao
