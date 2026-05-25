@@ -12,6 +12,7 @@ import { VerbaPlaceholder } from "./VerbaPlaceholder";
 import { HorasExtrasSecao } from "./HorasExtrasSecao";
 import { HorasIntervalaresSecao } from "./HorasIntervalaresSecao";
 import { AdicionalNoturnoSecao } from "./AdicionalNoturnoSecao";
+import { AdicionaisCondicionaisSecao } from "./AdicionaisCondicionaisSecao";
 import { JornadaArbitradaSecao, JornadaMistaSecao } from "./JornadaSecoes";
 
 type SecaoId = "BASE" | "RESUMO" | string;
@@ -143,6 +144,14 @@ export function FichaLayout() {
               if (secao === "adicional_noturno") {
                 return (
                   <AdicionalNoturnoSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "adicionais_condicionais") {
+                return (
+                  <AdicionaisCondicionaisSecao
                     onPrev={goPrev} onNext={goNext}
                     prevLabel={prev?.label} nextLabel={next?.label}
                   />
