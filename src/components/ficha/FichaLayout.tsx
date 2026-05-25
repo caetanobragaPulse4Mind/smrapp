@@ -12,6 +12,7 @@ import { VerbaPlaceholder } from "./VerbaPlaceholder";
 import { HorasExtrasSecao } from "./HorasExtrasSecao";
 import { HorasIntervalaresSecao } from "./HorasIntervalaresSecao";
 import { AdicionalNoturnoSecao } from "./AdicionalNoturnoSecao";
+import { AdicionaisCondicionaisSecao } from "./AdicionaisCondicionaisSecao";
 import { JornadaArbitradaSecao, JornadaMistaSecao } from "./JornadaSecoes";
 
 type SecaoId = "BASE" | "RESUMO" | string;
