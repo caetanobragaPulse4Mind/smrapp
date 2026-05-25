@@ -14,6 +14,17 @@ import { HorasIntervalaresSecao } from "./HorasIntervalaresSecao";
 import { AdicionalNoturnoSecao } from "./AdicionalNoturnoSecao";
 import { AdicionaisCondicionaisSecao } from "./AdicionaisCondicionaisSecao";
 import { JornadaArbitradaSecao, JornadaMistaSecao } from "./JornadaSecoes";
+import { DifSalariaisSecao } from "./DifSalariaisSecao";
+import { DevolucaoDescontosSecao } from "./DevolucaoDescontosSecao";
+import { MultaConvencionalSecao } from "./MultaConvencionalSecao";
+import { ValesSecao } from "./ValesSecao";
+import { VerbaRescisoriasSecao } from "./VerbaRescisoriasSecao";
+import { HonorariosSecao } from "./HonorariosSecao";
+import { DanosSecao } from "./DanosSecao";
+import { PensaoVitaliciaSecao } from "./PensaoVitaliciaSecao";
+import { PlrSecao } from "./PlrSecao";
+import { ReintegracaoSecao } from "./ReintegracaoSecao";
+import { DeducoesSecao } from "./DeducoesSecao";
 
 type SecaoId = "BASE" | "RESUMO" | string;
 
@@ -124,7 +135,7 @@ export function FichaLayout() {
               const goNext = next ? () => setSecao(next.id) : undefined;
 
               if (secao === "BASE") return <BaseSecao />;
-              if (secao === "RESUMO") return <ResumoSecao />;
+              if (secao === "RESUMO") return <ResumoSecao onNavigate={(id) => setSecao(id)} />;
               if (secao === "horas_extras") {
                 return (
                   <HorasExtrasSecao
@@ -172,6 +183,69 @@ export function FichaLayout() {
                     prevLabel={prev?.label} nextLabel={next?.label}
                   />
                 );
+              }
+              if (secao === "dif_salariais") {
+                return (
+                  <DifSalariaisSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "devolucao_descontos") {
+                return (
+                  <DevolucaoDescontosSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "multa_convencional") {
+                return (
+                  <MultaConvencionalSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "vales") {
+                return (
+                  <ValesSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "verbas_rescisorias") {
+                return (
+                  <VerbaRescisoriasSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "honorarios") {
+                return (
+                  <HonorariosSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
+              if (secao === "danos") {
+                return <DanosSecao onPrev={goPrev} onNext={goNext} prevLabel={prev?.label} nextLabel={next?.label} />;
+              }
+              if (secao === "pensao_vitalicia") {
+                return <PensaoVitaliciaSecao onPrev={goPrev} onNext={goNext} prevLabel={prev?.label} nextLabel={next?.label} />;
+              }
+              if (secao === "plr") {
+                return <PlrSecao onPrev={goPrev} onNext={goNext} prevLabel={prev?.label} nextLabel={next?.label} />;
+              }
+              if (secao === "reintegracao") {
+                return <ReintegracaoSecao onPrev={goPrev} onNext={goNext} prevLabel={prev?.label} nextLabel={next?.label} />;
+              }
+              if (secao === "deducoes") {
+                return <DeducoesSecao onPrev={goPrev} prevLabel={prev?.label} />;
               }
               return <VerbaPlaceholder verbaId={secao} label={VERBA_LABEL[secao] ?? secao} />;
             })()}

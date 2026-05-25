@@ -52,7 +52,13 @@ export const PECAS_LABELS: Record<string, string> = {
 };
 
 export const DOCUMENTOS = [
-  "trct", "contracheques", "cartao_ponto", "cct", "ficha_registro", "extrato_fgts", "revelia",
+  "trct",
+  "contracheques",
+  "cartao_ponto",
+  "cct",
+  "ficha_registro",
+  "extrato_fgts",
+  "revelia",
 ] as const;
 export const DOCUMENTOS_LABELS: Record<string, string> = {
   trct: "TRCT",
