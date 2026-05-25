@@ -149,6 +149,14 @@ export function FichaLayout() {
                   />
                 );
               }
+              if (secao === "adicionais_condicionais") {
+                return (
+                  <AdicionaisCondicionaisSecao
+                    onPrev={goPrev} onNext={goNext}
+                    prevLabel={prev?.label} nextLabel={next?.label}
+                  />
+                );
+              }
               if (secao === "jornada_arbitrada") {
                 return (
                   <JornadaArbitradaSecao
