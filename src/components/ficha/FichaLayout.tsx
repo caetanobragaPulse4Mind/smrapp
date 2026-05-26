@@ -28,9 +28,9 @@ import { DeducoesSecao } from "./DeducoesSecao";
 
 type SecaoId = "BASE" | "RESUMO" | string;
 
-export function FichaLayout() {
+export function FichaLayout({ initialSecao = "BASE" }: { initialSecao?: string }) {
   const { processo, base, save, updateStatus, loading } = useProcesso();
-  const [secao, setSecao] = useState<SecaoId>("BASE");
+  const [secao, setSecao] = useState<SecaoId>(initialSecao);
   const [saving, setSaving] = useState(false);
 
   if (loading || !processo) {

@@ -12,7 +12,7 @@ function ProcessoPage() {
   return (
     <ProcessoProvider id={id}>
       <Toaster richColors position="top-right" />
-      <FichaLayout />
+      <FichaLayout initialSecao="RESUMO" />
     </ProcessoProvider>
   );
 }
