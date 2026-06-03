@@ -83,7 +83,7 @@ function ListaProcessos() {
           <button
             onClick={novoProcesso}
             disabled={creating}
-            className="inline-flex items-center gap-2 rounded-md bg-[#af649e] px-3.5 py-2 text-sm font-medium text-background hover:opacity-90 disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-md px-3.5 py-2 text-sm font-medium text-background hover:opacity-90 disabled:opacity-50 bg-slate-950"
           >
             <Plus className="h-4 w-4" /> Novo processo
           </button>
