@@ -1,8 +1,9 @@
 import { useProcesso, type BaseData } from "@/state/ProcessoContext";
 import {
-  TIPO_DEMISSAO, AVISO_PREVIO, FGTS_CALCULO, DEFENDEMOS, RESPONSABILIDADE, EXECUTORES,
+  FGTS_CALCULO, DEFENDEMOS, RESPONSABILIDADE, EXECUTORES,
   VERBAS_DEFERIDAS_CHIPS, PECAS_JUDICIAIS, PECAS_LABELS, DOCUMENTOS, DOCUMENTOS_LABELS,
 } from "@/lib/constants";
+import { useListItems } from "@/hooks/useListItems";
 import { maskCPF, maskCNPJ, formatDateBR } from "@/lib/masks";
 import { cn } from "@/lib/utils";
 import { Check, Plus, Trash2 } from "lucide-react";
