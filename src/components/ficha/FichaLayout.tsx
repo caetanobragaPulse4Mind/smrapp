@@ -56,7 +56,7 @@ export function FichaLayout({ initialSecao = "BASE" }: { initialSecao?: string }
     <div className="flex min-h-screen flex-col bg-background">
       {/* Topbar específica da ficha */}
       <header className="sticky top-0 z-30 bg-topbar text-topbar-foreground">
-        <div className="flex h-12 items-center gap-3 px-4">
+        <div className="flex h-12 items-center gap-3 px-4 bg-[#af649e]">
           <Link to="/" className="inline-flex items-center gap-1 text-sm text-topbar-foreground/80 hover:text-topbar-foreground">
             <ChevronLeft className="h-4 w-4" /> lista
           </Link>
