@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProcessoIdRouteImport } from './routes/processo.$id'
+import { Route as AdminListasRouteImport } from './routes/admin.listas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,30 +23,39 @@ const ProcessoIdRoute = ProcessoIdRouteImport.update({
   path: '/processo/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminListasRoute = AdminListasRouteImport.update({
+  id: '/admin/listas',
+  path: '/admin/listas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin/listas': typeof AdminListasRoute
   '/processo/$id': typeof ProcessoIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin/listas': typeof AdminListasRoute
   '/processo/$id': typeof ProcessoIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin/listas': typeof AdminListasRoute
   '/processo/$id': typeof ProcessoIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/processo/$id'
+  fullPaths: '/' | '/admin/listas' | '/processo/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/processo/$id'
-  id: '__root__' | '/' | '/processo/$id'
+  to: '/' | '/admin/listas' | '/processo/$id'
+  id: '__root__' | '/' | '/admin/listas' | '/processo/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminListasRoute: typeof AdminListasRoute
   ProcessoIdRoute: typeof ProcessoIdRoute
 }
 
@@ -65,13 +75,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProcessoIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/listas': {
+      id: '/admin/listas'
+      path: '/admin/listas'
+      fullPath: '/admin/listas'
+      preLoaderRoute: typeof AdminListasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminListasRoute: AdminListasRoute,
   ProcessoIdRoute: ProcessoIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
