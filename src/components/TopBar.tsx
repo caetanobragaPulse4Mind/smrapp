@@ -8,6 +8,9 @@ export function TopBar({ children }: { children?: React.ReactNode }) {
           SMR <span className="text-topbar-foreground/70 font-normal">Perícia Contábil</span>
         </Link>
         <div className="flex-1">{children}</div>
+        <Link to="/admin/listas" className="text-sm opacity-80 hover:opacity-100">
+          Listas
+        </Link>
       </div>
     </header>
   );
