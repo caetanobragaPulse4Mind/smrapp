@@ -397,6 +397,33 @@ export type Database = {
           },
         ]
       }
+      list_items: {
+        Row: {
+          category: string
+          created_at: string
+          id: string
+          ordem: number
+          updated_at: string
+          value: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          id?: string
+          ordem?: number
+          updated_at?: string
+          value: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          id?: string
+          ordem?: number
+          updated_at?: string
+          value?: string
+        }
+        Relationships: []
+      }
       multa_convencional: {
         Row: {
           dados: Json
