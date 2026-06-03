@@ -1,14 +1,17 @@
 import { useProcesso, type BaseData } from "@/state/ProcessoContext";
 import {
-  TIPO_DEMISSAO, AVISO_PREVIO, FGTS_CALCULO, DEFENDEMOS, RESPONSABILIDADE, EXECUTORES,
+  FGTS_CALCULO, DEFENDEMOS, RESPONSABILIDADE, EXECUTORES,
   VERBAS_DEFERIDAS_CHIPS, PECAS_JUDICIAIS, PECAS_LABELS, DOCUMENTOS, DOCUMENTOS_LABELS,
 } from "@/lib/constants";
+import { useListItems } from "@/hooks/useListItems";
 import { maskCPF, maskCNPJ, formatDateBR } from "@/lib/masks";
 import { cn } from "@/lib/utils";
 import { Check, Plus, Trash2 } from "lucide-react";
 
 export function BaseSecao() {
   const { base, setBase, audit } = useProcesso();
+  const { values: TIPO_DEMISSAO } = useListItems("tipo_demissao");
+  const { values: AVISO_PREVIO } = useListItems("aviso_previo");
 
   function set<K extends keyof BaseData>(key: K, value: BaseData[K]) {
     setBase((b) => ({ ...b, [key]: value }));
