@@ -60,7 +60,7 @@ export function FichaLayout({ initialSecao = "BASE" }: { initialSecao?: string }
           <Link to="/" className="inline-flex items-center gap-1 text-sm text-topbar-foreground/80 hover:text-topbar-foreground">
             <ChevronLeft className="h-4 w-4" /> lista
           </Link>
-          <div className="flex-1 truncate text-center text-sm">
+          <div className="flex-1 truncate text-center text-sm bg-[#af649e]">
             <span className="font-mono">{processo.numero || "—"}</span>
             <span className="mx-2 text-topbar-foreground/40">·</span>
             <span>{processo.reclamante || "—"}</span>
