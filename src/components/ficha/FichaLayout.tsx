@@ -56,11 +56,11 @@ export function FichaLayout({ initialSecao = "BASE" }: { initialSecao?: string }
     <div className="flex min-h-screen flex-col bg-background">
       {/* Topbar específica da ficha */}
       <header className="sticky top-0 z-30 bg-topbar text-topbar-foreground">
-        <div className="flex h-12 items-center gap-3 px-4 bg-[#af649e]">
+        <div className="flex h-12 items-center gap-3 px-4 bg-slate-950">
           <Link to="/" className="inline-flex items-center gap-1 text-sm text-topbar-foreground/80 hover:text-topbar-foreground">
             <ChevronLeft className="h-4 w-4" /> lista
           </Link>
-          <div className="flex-1 truncate text-center text-sm bg-[#af649e]">
+          <div className="flex-1 truncate text-center text-sm bg-slate-950">
             <span className="font-mono">{processo.numero || "—"}</span>
             <span className="mx-2 text-topbar-foreground/40">·</span>
             <span>{processo.reclamante || "—"}</span>
